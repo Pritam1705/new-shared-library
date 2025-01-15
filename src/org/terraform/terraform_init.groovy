@@ -1,7 +1,10 @@
 package org.terraform
 
 class terraform_init {
-    static void initTerraform(def steps) {
-        steps.sh "terraform init" // Executes the Terraform initialization command
+    static void initTerraform(def steps, String dir = '.') { // Default directory is '.'
+        steps.sh """
+        cd ${dir} 
+        terraform init
+        """
     }
 }
