@@ -1,8 +1,20 @@
 package org.generic
 
-def call(String url, String creds, String branch) {
-       script {
-            git url: url, credentialsId: creds, branch: branch
-            echo "Checked out repository from ${url} on branch ${branch}"
+class CloneRepo {
+    static void cloneRepo(String repoUrl, def steps, String branch = 'main', String credentialsId = null) {
+        try {
+            steps.echo "Cloning repository: ${repoUrl} on branch: ${branch}"
+            if (credentialsId) {
+                steps.checkout([
+                    $class: 'GitSCM',
+                    branches: [[name: "*/${branch}"]],
+                    userRemoteConfigs: [[url: repoUrl, credentialsId: credentialsId]]
+                ])
+            } else {
+                steps.sh("git clone --branch ${branch} ${repoUrl}")
+            }
+        } catch (Exception e) {
+            steps.error("Failed to clone repository: ${e.message}")
+        }
     }
 }
