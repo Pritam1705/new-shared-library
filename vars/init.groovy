@@ -1,5 +1,5 @@
 import org.terraform.terraform_init
 
-def call(def steps) {
-    terraform_init.initTerraform(steps) // Correctly calls the static method
+def call(def steps, String dir = '.') { // Add `dir` parameter
+    terraform_init.initTerraform(steps, dir)
 }
