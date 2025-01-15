@@ -1,7 +1,7 @@
 package org.terraform
 
-class CloneRepo {
-    static void cloneRepo(def steps) {
+class terraform_init {
+    static void terraform_init(def steps) {
         steps.sh "terraform init"
     }
 }
