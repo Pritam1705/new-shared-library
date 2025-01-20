@@ -1,4 +1,4 @@
-import org.terraform.common.CloneRepo
+import org.terraform.CloneRepo
 
 def call(Map config, String repoUrl) {
     def branch = config.get('branch', 'main') 
