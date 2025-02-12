@@ -5,7 +5,7 @@ def call(String Directory) {
         script {
             sh """
                 cd ${Directory}
-                terraform init
+                terraform init -reconfigure
             """
         }
     }
