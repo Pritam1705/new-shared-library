@@ -12,9 +12,8 @@ def call(String url, String branch, String creds, String Directory) {
      def terraformFmt = new terraformFmt()
      def terraformValidate = new terraformValidate()
      def terraformPlan = new terraformPlan()
-     def terraformApply = new terraformApply()
+     def terraformapply = new terraformapply()
      
-
     // Call methods with correct arguments
     wsClean.call()
     gitCheckOut.call(url, branch, creds)  
@@ -22,6 +21,6 @@ def call(String url, String branch, String creds, String Directory) {
     terraformFmt.call(Directory) 
     terraformValidate.call(Directory)
     terraformPlan.call(Directory)
-    terraformApply.call(Directory)
+    terraformapply.call(Directory)
     terraformFmt.call(Directory)    
 }
