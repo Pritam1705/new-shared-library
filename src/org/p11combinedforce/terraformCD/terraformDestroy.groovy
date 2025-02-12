@@ -13,7 +13,7 @@ def call(String Directory) {
             
             def currentUser = env.BUILD_USER_ID ?: 'unknown'
 
-            def adminUsers = ["admin"] 
+            def adminUsers = ["pritam"] 
 
             if (userApproval == "Yes") {
                 if (adminUsers.contains(currentUser)) {
