@@ -14,7 +14,7 @@ def call(String Directory) {
             if (userApproval == "Yes") {
                 sh """
                     cd ${Directory}
-                    terraform apply 
+                    terraform apply -auto-approve
                 """
             } else {
                 echo "Terraform apply was skipped by the user."
