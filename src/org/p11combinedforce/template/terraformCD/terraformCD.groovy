@@ -23,6 +23,5 @@ def call(String url, String branch, String creds, String Directory) {
     terraformValidate.call(Directory)
     terraformPlan.call(Directory)
     terraformapply.call(Directory)
-    terraformFmt.call(Directory)
     terraformDestroy.call(Directory)    
 }
