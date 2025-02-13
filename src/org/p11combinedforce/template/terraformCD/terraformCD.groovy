@@ -13,7 +13,7 @@ def call(String url, String branch, String creds, String Directory) {
      def terraformValidate = new terraformValidate()
      def terraformPlan = new terraformPlan()
      def terraformapply = new terraformapply()
-     def terraformDestroy = new terraformDestroy()
+     
      
     // Call methods with correct arguments
     wsClean.call()
@@ -23,5 +23,5 @@ def call(String url, String branch, String creds, String Directory) {
     terraformValidate.call(Directory)
     terraformPlan.call(Directory)
     terraformapply.call(Directory)
-    terraformDestroy.call(Directory)    
+       
 }
