@@ -3,7 +3,7 @@ package org.p11combinedforce.terraformCD
 def call(String Directory) {
     stage("Terraform apply") {
         script {
-            // Prompting user for confirmation before applying Terraform changes
+            
             def userApproval = input(
                 message: "Do you want to proceed with Terraform apply?",
                 parameters: [
